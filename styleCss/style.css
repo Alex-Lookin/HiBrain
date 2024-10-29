@@ -1,0 +1,343 @@
+html{
+    box-sizing: border-box;  /*прописывается для нормализации разрешения. Уменьшается сам контейнер, а не их содержимое*/
+}
+
+*,
+*::before, /*до и после*/
+::after {
+    box-sizing: inherit; /*размер контейнера унаследуют от корневого*/
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;   /*Убераем все отступы для текаста и заголовков*/
+}
+
+a { /*Изначально ссылки строчные и им нельзя задать размеры (width и height) и фоновую картинку*/
+    display: inline-block; /*преобразование ссылки в строчно-блочный тип*/
+    color: inherit;
+    text-decoration: none; /*убрать подчеркнутость*/
+}
+
+img {
+    max-width: 100%; /*задаем максимальный размер картинки относительно родительского блока*/
+    display: block; 
+    object-fit: cover; /* настройка пропорций картинок. cover — картинка без нарушения пропорций заполнит всю доступную область, обрезая всё ненужное*/
+}
+
+body{
+    min-width: 320px; /*минимальное универсальное значение, которое не дает сжать сайт меньше 320px*/
+    word-break: normal; /*правило переноса текста. normal-значение по умолчанию, длинные слова или строки с неразрывным пробелом не переносятся, даже если выходят за границы родительского блока.*/
+    font-family:'Roboto', 'Montserrat', sans-serif;
+}
+/*--------------------------global----------------------------*/
+
+:root {
+    --white-color: #FFFFFF;
+    --bg-color: #F5F5F5;
+    --black-color-text: #2A2F37;
+    --borer-color: #2A2F371A;
+    --user-foto: #2A2F3714;
+    --gray-text: #948f8f;
+    --btn-blue: #1E3DAF;
+
+
+    }
+
+
+
+.list-reset {  /*Обнуляем параметры списка*/
+    margin: 0;
+    padding: 0;
+    list-style: none; /*уберает точки и подччеркивание у ссылок*/
+}
+.btn-reset { /*общее свойство для кнопок*/
+        padding: 0; 
+        border: none; /*убмрает рамку кнопки*/
+        background-color: transparent; /*Убирает фон у кнопки*/
+        Cursor: pointer; /*делает курсор при наведении в виде пальца*/
+    }
+
+.font-skin{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+.body-wrapper{
+background-color: var(--bg-color);
+}
+
+.header-size{
+    width: 1920px;
+    height: 72px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+}
+
+.header-wrapper{
+    width: 1170px;
+    height: 72px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header-wrapper-btn{
+    display: flex;
+    gap: 24px;
+
+}
+
+.header-user-btn{
+    height: 24px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+
+.main-wrapper{
+    display: flex;
+    max-width: 1182px;
+    margin: 28px auto 0;
+    gap: 52px;
+}
+
+
+
+
+/*--------------------------aside----------------------------*/
+.aside-wrapper{
+    
+    background-color: var(--white-color);
+    width: 263px;
+    height: 894px;
+    margin: 0 auto;
+}
+
+.user-foto{
+    width: 40px;
+    height: 40px;
+    /* border: 0px solid  var(--user-foto); */
+    background-color: var(--user-foto);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    align-content: center;
+    text-align: center;
+    color:var(--gray-text);
+
+}
+
+.aside-header{
+    display: flex;
+    gap: 16px;
+    width: 263px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--borer-color);
+    padding: 36px 40px 24px 36px;
+    
+}
+
+.name-user {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+.name-page {
+    font-weight: 400px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--gray-text);
+}
+
+.aside-btn-wrapper{
+    padding: 16px 100px 28px 12px;
+    height: 792px;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.asside-btn-Announcement{
+    width: 162px;
+    border-left: 2px solid var(--btn-blue);
+    display: flex;
+    justify-content: center
+}
+
+/*--------------------------Section----------------------------*/
+
+.section-head-wrapper{
+    width: 867px;
+    height: 101px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--borer-color);
+}
+
+.title-ads{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+.summ-ads{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--gray-text);
+}
+
+.btn-ads{
+    width: 133px;
+    height: 40px;
+    /* border:1px solid var(--btn-blue); */
+    background-color: var(--btn-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--white-color);
+}
+
+.serch-wrapper{
+    display: flex;
+    gap: 110px;
+}
+
+.serch-btn-wrapper{
+    display: flex;
+    gap: 12px;
+}
+
+.input-serch{
+    width: 420px;
+    height: 40px;
+}
+
+.right-panel{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.filter-btn{
+    width: 159px;
+    height: 40px;
+    background-color: var(--user-foto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+
+
+.table-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding-left: 24px;
+    margin-top: 8px;
+    
+}
+
+.filter-btn-wrapper{
+    width: 867px;
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.filter-btn-table{
+    display: flex;
+    align-items: center;
+    color: var(--gray-text);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.wrapper-ads{
+    width: 867px;
+    height: 80px;
+    background-color: var(--white-color);
+}
+
+.ads-index-btn-wrapper{
+    display: flex;
+    gap: 90px;
+}
+
+.ads-text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--black-color-text);
+}
+
+
+/*---------------------footer-wrapper--------------------*/
+.footer-text{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--white-color);
+}
+
+.footer-wrapper{
+    width: 1920px;
+    height: 208px;
+    background-color: var(--black-color-text);
+    margin: 160px auto 0;
+}
+
+.header-footer-wrapper{
+    margin: 0 auto;
+    height: 120px;
+    width: 1170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--white-color );
+}
+
+.left-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.create-line {
+    height: 32px;
+    border-left: 2px solid var(--white-color);
+  }
+
+.right-wrapper{
+    display: flex;
+    gap: 24px;
+}
+
+.footer-botton{
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+    height: 88px;
+    align-items: center;
+    justify-content: space-between;
+
+}
